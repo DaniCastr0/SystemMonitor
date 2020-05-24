@@ -260,11 +260,12 @@ long LinuxParser::UpTime(int pid) {
   while (linestream>>word)
     {
         if(cont==21){
-          return (std::stol(word));
+          break;
         }     
         cont++;
     }
   filestream.close();
+  return (UpTime() - stof(word)/sysconf(_SC_CLK_TCK));
 
-  return 0; 
+   
   }

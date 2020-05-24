@@ -47,7 +47,7 @@ string Process::User() {
 
 // TODO: Return the age of this process (in seconds)
 long int Process::UpTime() { 
-    return (LinuxParser::UpTime(Pid())/sysconf(_SC_CLK_TCK)); 
+    return LinuxParser::UpTime(Pid()); 
     
     }
 void Process::CpuUse()
